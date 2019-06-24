@@ -1,0 +1,12 @@
+{
+    "cSpell.words": [
+        "WMXPY",
+        "codecov",
+        "connor",
+        "sudoo",
+        "triforce"
+    ],
+    "tslint.configFile": "typescript/tslint.json",
+    "javascript.preferences.importModuleSpecifier": "auto",
+    "typescript.preferences.importModuleSpecifier": "auto",
+}

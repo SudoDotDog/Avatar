@@ -1,0 +1,56 @@
+{
+  "name": "@sudoo/avatar",
+  "version": "1.0.0",
+  "description": ":paw_prints: Avatar management",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SudoDotDog/Avatar.git"
+  },
+  "keywords": [
+    "Avatar"
+  ],
+  "author": "WMXPY",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SudoDotDog/Avatar/issues"
+  },
+  "homepage": "https://github.com/SudoDotDog/Avatar#readme",
+  "dependencies": {
+    "@brontosaurus/core": "^1.6.2",
+    "@brontosaurus/node": "^1.2.0",
+    "@sudoo/bark": "^2.7.1",
+    "@sudoo/express": "^1.10.1",
+    "@sudoo/log": "^1.2.2",
+    "@types/request": "^2.48.1",
+    "connor": "^2.5.1",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "@sudoo/triforce": "^1.6.0",
+    "@sudoo/webpack-react": "^2.0.1",
+    "@types/express": "^4.17.0"
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "include": [
+      "script/**/*.ts",
+      "src/**/*.ts"
+    ],
+    "instrument": true,
+    "reporter": [
+      "json",
+      "text-summary"
+    ],
+    "report-dir": "coverage",
+    "require": [
+      "./test/tshook.js"
+    ],
+    "sourceMap": true
+  }
+}
