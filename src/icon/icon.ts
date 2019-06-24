@@ -1,17 +1,19 @@
 /**
  * @author WMXPY
- * @fileoverview Default Icon generator
+ * @namespace Icon
+ * @description Icon
  */
 
 import { chaetodon } from './chaetodon/chaetodon';
-import { IIconConfig } from './interface';
+import { IconConfig } from './declare';
 import Buffer from './sparidae/buffer';
 import Color from './sparidae/color';
 import Generator from './sparidae/generator';
 import Parser from './sparidae/parser';
 import Point, { IPoint } from './sparidae/point';
 
-export const Icon = (str: string, options: IIconConfig = {}) => {
+export const Icon = (str: string, options: IconConfig = {}) => {
+
     const generator: Generator = new Generator(str);
     const point: Point = new Point();
     const parser: Parser = new Parser(str);

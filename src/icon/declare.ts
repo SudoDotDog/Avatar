@@ -1,12 +1,13 @@
 /**
  * @author WMXPY
- * @fileoverview Icon Interface
+ * @namespace Icon
+ * @description declare
  */
 
-export interface IIconConfig {
+export type IconConfig = {
     display?: string;
     center?: boolean;
     circle?: boolean;
     thin?: boolean;
     larger?: boolean;
-}
+};

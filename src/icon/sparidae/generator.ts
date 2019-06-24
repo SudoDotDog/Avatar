@@ -1,12 +1,13 @@
 /**
  * @author WMXPY
- * @description Sparidae
- * @fileoverview Generator Icon Class
+ * @namespace Sparidae
+ * @description Generator Icon Class
  */
 
-import { stringToMD5 } from "../../../util/data/crypto";
+import { stringToMD5 } from "../../util/crypto";
 
 export default class Generator {
+
     private _medium: string;
 
     public constructor(str: string) {

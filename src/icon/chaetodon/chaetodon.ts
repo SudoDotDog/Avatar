@@ -1,7 +1,7 @@
 /**
  * @author WMXPY
+ * @namespace Chaetodon
  * @description Chaetodon
- * @fileoverview Color Storage
  */
 
 export type ColorSet = Array<string[5]>;
@@ -51,7 +51,7 @@ export const chaetodon = (code?: number): ColorSet => {
         const index: COLOR_CODE = (Math.floor(code % (Object.keys(COLOR_CODE).length / 2))) + 1;
         return colorList[index];
     } else {
-        let ran: COLOR_CODE = (Math.floor((Math.random() * 1000)) % 15) + 1;
+        const ran: COLOR_CODE = (Math.floor((Math.random() * 1000)) % 15) + 1;
         return colorList[ran];
     }
 };

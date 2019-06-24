@@ -1,10 +1,10 @@
 /**
  * @author WMXPY
- * @description Sparidae
- * @fileoverview Color Icon Class
+ * @namespace Sparidae
+ * @description Color
  */
 
-import { error, ERROR_CODE } from '../../../util/error/error';
+import { ERROR_CODE, panic } from "../../util/panic";
 
 export default class Color {
     private _list: string[];
@@ -30,7 +30,7 @@ export default class Color {
             color = color.substring(1, color.length);
         }
         if (color.length !== 6) {
-            throw error(ERROR_CODE.INTERNAL_ERROR);
+            throw panic.code(ERROR_CODE.INTERNAL_ERROR);
         }
 
         let result: string = "rgba(";

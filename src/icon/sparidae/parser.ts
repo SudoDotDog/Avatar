@@ -1,22 +1,26 @@
 /**
  * @author WMXPY
- * @description Sparidae
- * @fileoverview Parser Icon Class
+ * @namespace Sparidae
+ * @description Parser
  */
 
 export default class Parser {
+
     private _str: string;
 
     public constructor(str: string) {
+
         this._str = str;
     }
 
     public getOneDigitResult(): string {
+
         return this._str.substring(0, 1).toUpperCase();
     }
 
     public getTwoDigitResult(): string {
-        let arr: string[] = this._str.split(" ");
+
+        const arr: string[] = this._str.split(" ");
         switch (arr.length) {
             case 1:
                 if (arr[0].length === 0) {
@@ -34,7 +38,8 @@ export default class Parser {
     }
 
     public getThreeDigitResult(): string {
-        let arr: string[] = this._str.split(" ");
+
+        const arr: string[] = this._str.split(" ");
         switch (arr.length) {
             case 1:
                 if (arr[0].length === 0) {

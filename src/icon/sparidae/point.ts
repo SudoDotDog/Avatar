@@ -1,10 +1,10 @@
 /**
  * @author WMXPY
- * @description Sparidae
- * @fileoverview Point Icon Class
+ * @namespace Sparidae
+ * @description Point
  */
 
-import { error, ERROR_CODE } from "../../../util/error/error";
+import { ERROR_CODE, panic } from "../../util/panic";
 
 export interface IPoint {
     x: number;
@@ -31,12 +31,13 @@ export default class Point {
 
     public getPoint(key: number): IPoint {
         if (key <= EDGE.TOTAL) {
-            throw error(ERROR_CODE.POINT_INTERNAL_ERROR);
+            throw panic.code(ERROR_CODE.POINT_INTERNAL_ERROR);
         }
 
-        let temp: number = key % EDGE.TOTAL;
+        const temp: number = key % EDGE.TOTAL;
+        const lengthLeft: number = Math.floor(temp % EDGE.LENGTH);
+
         let whichEdge: number = Math.floor(temp / EDGE.LENGTH);
-        let lengthLeft: number = Math.floor(temp % EDGE.LENGTH);
         let resultPoint: IPoint;
 
         let loop: number = 0;
@@ -66,7 +67,7 @@ export default class Point {
 
             /* istanbul ignore next */
             default:
-                throw error(ERROR_CODE.EDGE_OUT_OF_BOUND);
+                throw panic.code(ERROR_CODE.EDGE_OUT_OF_BOUND);
         }
         this.pushQueue(whichEdge).touchQueue();
         this._outer.push(resultPoint);
@@ -74,20 +75,20 @@ export default class Point {
     }
 
     public getMediumPoint(point1: IPoint, point2: IPoint, key: number): IPoint {
-        let x: number = Math.floor((point1.x + point2.x) / 2) + this.getKeyShift(key, EDGE.AVAILABLE_SHIFT);
-        let y: number = Math.floor((point1.y + point2.y) / 2) + this.getKeyShift(key, EDGE.AVAILABLE_SHIFT);
-        let resultPoint = { x, y };
+        const x: number = Math.floor((point1.x + point2.x) / 2) + this.getKeyShift(key, EDGE.AVAILABLE_SHIFT);
+        const y: number = Math.floor((point1.y + point2.y) / 2) + this.getKeyShift(key, EDGE.AVAILABLE_SHIFT);
+        const resultPoint = { x, y };
         this._inner.push(resultPoint);
         return resultPoint;
     }
 
     public getKeyShift(key: number, limit: number): number {
-        let shift = (key % limit);
+        const shift = (key % limit);
         return Math.floor(shift - shift / 2);
     }
 
     public getRandom(limit: number): number {
-        let ran: number = Math.floor(Math.random() * 1000);
+        const ran: number = Math.floor(Math.random() * 1000);
         return Math.floor((ran % limit) - limit / 2);
     }
 
@@ -114,7 +115,8 @@ export default class Point {
     }
 
     public checkQueue(edge: number): boolean {
-        for (let i of this._queue) {
+
+        for (const i of this._queue) {
             if (i === edge) {
                 return true;
             }
@@ -138,5 +140,4 @@ export default class Point {
         this._queue = [];
         return this;
     }
-
 }

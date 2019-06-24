@@ -1,7 +1,7 @@
 /**
  * @author WMXPY
- * @description Sparidae
- * @fileoverview Buffer Icon Class
+ * @namespace Sparidae
+ * @description Buffer
  */
 
 import { EDGE, IPoint } from './point';
