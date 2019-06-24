@@ -41,7 +41,7 @@
     connor "^2.4.0"
     request "^2.88.0"
 
-"@sudoo/bark@^2.7.1":
+"@sudoo/bark@^2.6.1", "@sudoo/bark@^2.7.1":
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/@sudoo/bark/-/bark-2.7.1.tgz#84b9db0be3aa7b4d6896ced81d9fa9aac96578ef"
   integrity sha512-0zBFbIQAtu3XNJkFPszdljYXXIPXzR63qypfTwFRupmu3gxgfBMtdPShbQebGuGG0KQEmXasGMBQVi2O0jWbbQ==
@@ -60,6 +60,14 @@
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@sudoo/extract/-/extract-1.2.0.tgz#42c0753c1b76bc964180a54ca31668a9ac6576ae"
   integrity sha512-3/F3HuTnX2tAvkSS1KA2A6DPwZQDVhlRT2xfDmHhXp0p2aENvfdvBaiUU+xCqvHfS/Koi4pBUoWryGkTWdn4IA==
+
+"@sudoo/io@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@sudoo/io/-/io-1.6.0.tgz#efc631a04d55419ba1001a467b7151c7c070dfce"
+  integrity sha512-sHpHkuxq+N0Z9fBIda7JEHlK4UbxnAdiqyJ5yorKxtr0YTuCcMfG5QbVXGAE82/jNjaAi6MfIuaCQd15GQ9PpQ==
+  dependencies:
+    "@sudoo/bark" "^2.6.1"
+    connor "^2.4.0"
 
 "@sudoo/log@^1.2.2":
   version "1.2.2"

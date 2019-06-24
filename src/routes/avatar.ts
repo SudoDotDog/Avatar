@@ -5,34 +5,37 @@
  */
 
 import { ROUTE_MODE, SudooExpressHandler, SudooExpressNextFunction, SudooExpressRequest, SudooExpressResponse } from "@sudoo/express";
+import { writeTextFile } from "@sudoo/io";
+import { IconConfig } from "../icon/declare";
+import { Icon } from "../icon/icon";
+import { getTempFilePath } from "../util/temp";
 import { LoggableRoute } from "./basic";
 import { basicHook } from "./hook";
-import { IconConfig } from "../icon/declare";
 
-export class ServerStatusRoute extends LoggableRoute {
+export class AvatarRoute extends LoggableRoute {
 
     public readonly path: string = '/a/:avatar';
     public readonly mode: ROUTE_MODE = ROUTE_MODE.GET;
 
     public readonly groups: SudooExpressHandler[] = [
-        basicHook.wrap(this._serverStatusHandler.bind(this), '/a/:avatar - Main', true),
+        basicHook.wrap(this._avatarHandler.bind(this), '/a/:avatar - Main', true),
     ];
 
-    private async _serverStatusHandler(req: SudooExpressRequest, res: SudooExpressResponse, next: SudooExpressNextFunction): Promise<void> {
+    private async _avatarHandler(req: SudooExpressRequest, res: SudooExpressResponse, next: SudooExpressNextFunction): Promise<void> {
 
         try {
 
             const avatar: string = req.params.avatar;
             const query: any = req.query;
 
-            const config = this._getIconConfigFromQuery(query);
-            const path = rummageLongTermTempFileOrCreateWithLazyLoadContent(
-                this.createAvatarHashFileName(avatar, config),
-                'svg',
-                this.getCreateAvatarFunction(avatar, config),
-            );
+            const config: IconConfig = this._getIconConfigFromQuery(query);
+            const icon: string = Icon(avatar, config);
 
-            res.agent.smartFileSend(path);
+            const temp: string = getTempFilePath('temp.svg');
+            console.log(temp);
+            await writeTextFile(temp, icon);
+
+            res.agent.addFile(temp);
         } catch (err) {
             res.agent.fail(400, err);
         } finally {
