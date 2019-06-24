@@ -25,17 +25,17 @@ export class AvatarRoute extends LoggableRoute {
 
         try {
 
-            const avatar: string = req.params.avatar;
-            const query: any = req.query;
+            // const avatar: string = req.params.avatar;
+            // const query: any = req.query;
 
-            const config: IconConfig = this._getIconConfigFromQuery(query);
-            const icon: string = Icon(avatar, config);
+            // const config: IconConfig = this._getIconConfigFromQuery(query);
+            // const icon: string = Icon(avatar, config);
 
-            const temp: string = getTempFilePath('temp.svg');
-            console.log(temp);
-            await writeTextFile(temp, icon);
+            // const temp: string = getTempFilePath('temp.svg');
+            // console.log(temp);
+            // await writeTextFile(temp, icon);
 
-            res.agent.addFile(temp);
+            res.agent.addFile('/Users/mengw/Development/git/Avatar/makefile');
         } catch (err) {
             res.agent.fail(400, err);
         } finally {

@@ -10,8 +10,6 @@ import { AvatarRoute } from "./routes/avatar";
 import { MODULE_NAME } from "./util/panic";
 
 const setting: SudooExpressApplication = SudooExpressApplication.create(MODULE_NAME, '1');
-setting.allowCrossOrigin();
-setting.setCrossOriginAllowHeaders("x-impersonate");
 
 const app: SudooExpress = SudooExpress.create(setting);
 
@@ -23,7 +21,7 @@ if (process.env.NODE_ENV && process.env.NODE_ENV.toLowerCase() === 'development'
     SudooLog.global.level(LOG_LEVEL.INFO);
 }
 
-app.route(new AvatarRoute())
+app.route(new AvatarRoute());
 
 app.host(8080);
 console.log('hosting on 8080');
