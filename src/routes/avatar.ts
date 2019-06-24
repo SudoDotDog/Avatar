@@ -5,10 +5,8 @@
  */
 
 import { ROUTE_MODE, SudooExpressHandler, SudooExpressNextFunction, SudooExpressRequest, SudooExpressResponse } from "@sudoo/express";
-import { writeTextFile } from "@sudoo/io";
 import { IconConfig } from "../icon/declare";
 import { Icon } from "../icon/icon";
-import { getTempFilePath } from "../util/temp";
 import { LoggableRoute } from "./basic";
 import { basicHook } from "./hook";
 
@@ -25,17 +23,13 @@ export class AvatarRoute extends LoggableRoute {
 
         try {
 
-            // const avatar: string = req.params.avatar;
-            // const query: any = req.query;
+            const avatar: string = req.params.avatar;
+            const query: any = req.query;
 
-            // const config: IconConfig = this._getIconConfigFromQuery(query);
-            // const icon: string = Icon(avatar, config);
+            const config: IconConfig = this._getIconConfigFromQuery(query);
+            const icon: string = Icon(avatar, config);
 
-            // const temp: string = getTempFilePath('temp.svg');
-            // console.log(temp);
-            // await writeTextFile(temp, icon);
-
-            res.agent.addFile('/Users/mengw/Development/git/Avatar/makefile');
+            res.agent.raw(icon);
         } catch (err) {
             res.agent.fail(400, err);
         } finally {
