@@ -11,15 +11,17 @@ import Generator from '../sparidae/generator';
 import Parser from '../sparidae/parser';
 import Point from '../sparidae/point';
 
-export const getDisplay = (str: string, display?: string): string => {
+export const getDisplay = (content: string, display?: string): string => {
 
     if (display) {
+
         return display;
     } else if (display === '') {
+
         return display;
     }
 
-    const parser: Parser = new Parser(str);
+    const parser: Parser = new Parser(content);
     return parser.getTwoDigitResult();
 };
 
