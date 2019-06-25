@@ -5,8 +5,8 @@
  */
 
 import { ROUTE_MODE, SudooExpressHandler, SudooExpressNextFunction, SudooExpressRequest, SudooExpressResponse } from "@sudoo/express";
-import { IconConfig } from "../icon/declare";
-import { Icon } from "../icon/icon";
+import { IconConfig } from "../sparidae/declare";
+import { Icon } from "../sparidae/icon";
 import { LoggableRoute } from "./basic";
 import { basicHook } from "./hook";
 
