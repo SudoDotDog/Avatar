@@ -1,16 +1,16 @@
 /**
  * @author WMXPY
- * @namespace Icon
+ * @namespace Sparidae
  * @description Icon
  */
 
 import { chaetodon } from '../chaetodon/chaetodon';
 import Buffer from './buffer';
 import Color from './color';
-import { IconConfig } from './declare';
+import { Coordinate, IconConfig } from './declare';
 import Generator from './generator';
 import Parser from './parser';
-import Point, { IPoint } from './point';
+import Point from './point';
 
 export const Icon = (str: string, options: IconConfig = {}) => {
 
@@ -27,7 +27,7 @@ export const Icon = (str: string, options: IconConfig = {}) => {
     }
     const color: Color = new Color(chaetodon(generator.splice(27, 30)));
 
-    const points: IPoint[] = [
+    const points: Coordinate[] = [
         point.getPoint(generator.splice(0, 6)),
         point.getPoint(generator.splice(6, 12)),
         point.getPoint(generator.splice(12, 18)),

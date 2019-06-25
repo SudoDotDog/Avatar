@@ -1,14 +1,48 @@
 /**
  * @author WMXPY
- * @namespace Icon
+ * @namespace Sparidae
  * @description declare
  */
 
+export enum EDGE {
+
+    LENGTH = 480,
+    TOTAL = LENGTH * 4,
+    AVAILABLE_SHIFT = Math.floor(LENGTH * 0.3),
+}
+
+export type Coordinate = {
+
+    readonly x: number;
+    readonly y: number;
+};
+
 export type IconConfig = {
 
-    display?: string;
-    center?: boolean;
-    circle?: boolean;
-    thin?: boolean;
-    larger?: boolean;
+    readonly display?: string;
+    readonly center?: boolean;
+    readonly circle?: boolean;
+    readonly thin?: boolean;
+    readonly larger?: boolean;
+};
+
+export type SVGElement = {
+
+    readonly type: "text";
+    readonly point: Coordinate;
+    readonly style: string;
+} | {
+
+    readonly type: "polygon";
+    readonly points: Coordinate[];
+    readonly fill: string;
+};
+
+export type IconStructure = {
+
+    readonly viewBox: string;
+    readonly circle: boolean;
+    readonly display: string;
+    readonly thin: boolean;
+    readonly element: SVGElement[];
 };

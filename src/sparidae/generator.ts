@@ -1,7 +1,7 @@
 /**
  * @author WMXPY
  * @namespace Sparidae
- * @description Generator Icon Class
+ * @description Generator
  */
 
 import { stringToMD5 } from "../util/crypto";

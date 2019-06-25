@@ -4,7 +4,7 @@
  * @description Buffer
  */
 
-import { EDGE, IPoint } from './point';
+import { Coordinate, EDGE } from "./declare";
 
 export default class Buffer {
 
@@ -32,7 +32,7 @@ export default class Buffer {
         return this;
     }
 
-    public rect(point1: IPoint, point2: IPoint, point3: IPoint, fill: string): Buffer {
+    public rect(point1: Coordinate, point2: Coordinate, point3: Coordinate, fill: string): Buffer {
         let buffer: string = '';
         buffer += "<polygon points=\"";
         buffer += this.pointBuilder(point1) + " ";
@@ -43,7 +43,7 @@ export default class Buffer {
         return this;
     }
 
-    public text(point: IPoint, fontSize: number): Buffer {
+    public text(point: Coordinate, fontSize: number): Buffer {
         if (!this._text) {
             return this;
         }
@@ -64,7 +64,7 @@ export default class Buffer {
         return this;
     }
 
-    public centeredText(point: IPoint, fontSize: number): Buffer {
+    public centeredText(point: Coordinate, fontSize: number): Buffer {
         if (!this._text) {
             return this;
         }
@@ -125,7 +125,7 @@ export default class Buffer {
         return buffer;
     }
 
-    private pointBuilder(point: IPoint): string {
+    private pointBuilder(point: Coordinate): string {
         return point.x + "," + point.y;
     }
 

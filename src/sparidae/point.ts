@@ -5,23 +5,13 @@
  */
 
 import { ERROR_CODE, panic } from "../util/panic";
-
-export interface IPoint {
-    x: number;
-    y: number;
-}
-
-export enum EDGE {
-    LENGTH = 480,
-    TOTAL = LENGTH * 4,
-    AVAILABLE_SHIFT = Math.floor(LENGTH * 0.3),
-}
+import { Coordinate, EDGE } from "./declare";
 
 export default class Point {
 
     private _queue: number[];
-    private _outer: IPoint[];
-    private _inner: IPoint[];
+    private _outer: Coordinate[];
+    private _inner: Coordinate[];
 
     public constructor() {
         this._queue = [];
@@ -29,7 +19,7 @@ export default class Point {
         this._inner = [];
     }
 
-    public getPoint(key: number): IPoint {
+    public getPoint(key: number): Coordinate {
         if (key <= EDGE.TOTAL) {
             throw panic.code(ERROR_CODE.POINT_INTERNAL_ERROR);
         }
@@ -38,7 +28,7 @@ export default class Point {
         const lengthLeft: number = Math.floor(temp % EDGE.LENGTH);
 
         let whichEdge: number = Math.floor(temp / EDGE.LENGTH);
-        let resultPoint: IPoint;
+        let resultPoint: Coordinate;
 
         let loop: number = 0;
 
@@ -74,7 +64,7 @@ export default class Point {
         return resultPoint;
     }
 
-    public getMediumPoint(point1: IPoint, point2: IPoint, key: number): IPoint {
+    public getMediumPoint(point1: Coordinate, point2: Coordinate, key: number): Coordinate {
         const x: number = Math.floor((point1.x + point2.x) / 2) + this.getKeyShift(key, EDGE.AVAILABLE_SHIFT);
         const y: number = Math.floor((point1.y + point2.y) / 2) + this.getKeyShift(key, EDGE.AVAILABLE_SHIFT);
         const resultPoint = { x, y };
@@ -92,14 +82,14 @@ export default class Point {
         return Math.floor((ran % limit) - limit / 2);
     }
 
-    public getEndPoint(): IPoint {
+    public getEndPoint(): Coordinate {
         return {
             x: EDGE.LENGTH - 25,
             y: EDGE.LENGTH - 55,
         };
     }
 
-    public getCenterPoint(): IPoint {
+    public getCenterPoint(): Coordinate {
         return {
             x: Math.floor(EDGE.LENGTH / 2),
             y: Math.floor(EDGE.LENGTH / 2),
