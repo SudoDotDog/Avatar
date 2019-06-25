@@ -29,8 +29,12 @@ export type IconConfig = {
 export type SVGElement = {
 
     readonly type: "text";
+    readonly text: string;
     readonly point: Coordinate;
-    readonly style: string;
+    readonly fontSize: number;
+    readonly bold: boolean;
+    readonly anchor: "middle" | "end";
+    readonly baseline: "middle";
 } | {
 
     readonly type: "polygon";
@@ -40,9 +44,8 @@ export type SVGElement = {
 
 export type IconStructure = {
 
-    readonly viewBox: string;
     readonly circle: boolean;
-    readonly display: string;
-    readonly thin: boolean;
-    readonly element: SVGElement[];
+    readonly aspect: boolean;
+    readonly viewBox: string;
+    readonly elements: SVGElement[];
 };
