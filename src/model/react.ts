@@ -1,7 +1,7 @@
 /**
  * @author WMXPY
  * @namespace Model
- * @description Json
+ * @description React
  */
 
 import { Coordinate, IconStructure, SVGElement } from "../sparidae/declare";
@@ -9,26 +9,24 @@ import { ERROR_CODE, panic } from "../util/panic";
 
 export type Tag = "svg" | "polygon" | "text" | "g" | "defs" | "clipPath" | "circle";
 
-export type JsonStructure = {
+export type ReactStructure = {
     readonly tag: Tag;
-    readonly attributes: Record<string, string>;
-    readonly children: Array<string | JsonStructure>;
+    readonly attributes: Record<string, any>;
+    readonly children: Array<string | ReactStructure>;
 };
 
-export const renderJsonModel = (structure: IconStructure): JsonStructure => {
+export const renderReactModel = (structure: IconStructure): ReactStructure => {
 
-    const result: JsonStructure = {
+    const result: ReactStructure = {
         tag: 'svg',
         attributes: {
-            xmlns: 'http://www.w3.org/2000/svg',
             viewBox: structure.viewBox,
-            version: '1.1',
             preserveAspectRatio: structure.aspect ? 'true' : 'none',
         },
         children: [],
     };
 
-    const elements: JsonStructure[] = structure.elements.map((value: SVGElement): JsonStructure => {
+    const elements: ReactStructure[] = structure.elements.map((value: SVGElement): ReactStructure => {
 
         if (value.type === 'polygon') {
             return {
@@ -41,9 +39,10 @@ export const renderJsonModel = (structure: IconStructure): JsonStructure => {
             };
         } else if (value.type === 'text') {
 
-            const fontWeight: string = value.bold ? 'font-weight:bold;' : '';
-            const dominant: string = value.baseline === 'none' ? '' : `;dominant-baseline:${value.baseline}`;
-            const style: string = `${fontWeight}font-size:${value.fontSize};text-anchor:${value.anchor}${dominant}`;
+            const style: Record<string, any> = {
+                fontSize: value.fontSize,
+                textAnchor: value.anchor,
+            };
 
             return {
                 tag: 'text',
