@@ -5,8 +5,9 @@
  */
 
 import { ROUTE_MODE, SudooExpressHandler, SudooExpressNextFunction, SudooExpressRequest, SudooExpressResponse } from "@sudoo/express";
-import { IconConfig } from "../sparidae/declare";
-import { Icon } from "../sparidae/icon";
+import { generateIcon } from "../icon/base";
+import { renderSvgModel } from "../model/svg";
+import { IconConfig, IconStructure } from "../sparidae/declare";
 import { LoggableRoute } from "./basic";
 import { basicHook } from "./hook";
 
@@ -27,7 +28,8 @@ export class AvatarRoute extends LoggableRoute {
             const query: any = req.query;
 
             const config: IconConfig = this._getIconConfigFromQuery(query);
-            const icon: string = Icon(avatar, config);
+            const base: IconStructure = generateIcon(avatar, config);
+            const icon: string = renderSvgModel(base);
 
             res.agent.raw(icon);
         } catch (err) {
