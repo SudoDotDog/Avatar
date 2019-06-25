@@ -5,6 +5,7 @@
  */
 
 import { Coordinate, IconStructure, SVGElement } from "../sparidae/declare";
+import { ERROR_CODE, panic } from "../util/panic";
 
 export const renderSvgModel = (structure: IconStructure): string => {
 
@@ -13,7 +14,7 @@ export const renderSvgModel = (structure: IconStructure): string => {
     ];
 
     if (structure.circle) {
-        buffer.push("<g clip-path=\"url(#circle)\">");
+        buffer.push(`<g clip-path="url(#circle)">`);
     } else {
         buffer.push("<g>");
     }
@@ -28,7 +29,7 @@ export const renderSvgModel = (structure: IconStructure): string => {
             const dominant: string = value.baseline === 'none' ? '' : `;dominant-baseline:${value.baseline}`;
             return `<text x="${value.point.x}" y="${value.point.y}" style="${fontWeight}font-size:${value.fontSize};text-anchor:${value.anchor}${dominant}">${value.text}</text>`;
         }
-        return '';
+        throw panic.code(ERROR_CODE.INTERNAL_ERROR);
     }));
 
     buffer.push('</g>');

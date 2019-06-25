@@ -1,27 +1,27 @@
 /**
  * @author WMXPY
  * @namespace Route
- * @description Avatar
+ * @description Json
  */
 
 import { ROUTE_MODE, SudooExpressHandler, SudooExpressNextFunction, SudooExpressRequest, SudooExpressResponse } from "@sudoo/express";
 import { generateIcon } from "../icon/base";
 import { getIconConfigFromQuery } from "../icon/parse";
-import { renderSvgModel } from "../model/svg";
+import { JsonStructure, renderJsonModel } from "../model/json";
 import { IconConfig, IconStructure } from "../sparidae/declare";
 import { LoggableRoute } from "./basic";
 import { basicHook } from "./hook";
 
-export class AvatarRoute extends LoggableRoute {
+export class JsonRoute extends LoggableRoute {
 
-    public readonly path: string = '/a/:avatar';
+    public readonly path: string = '/j/:avatar';
     public readonly mode: ROUTE_MODE = ROUTE_MODE.GET;
 
     public readonly groups: SudooExpressHandler[] = [
-        basicHook.wrap(this._avatarHandler.bind(this), '/a/:avatar - Main', true),
+        basicHook.wrap(this._jsonHandler.bind(this), '/j/:avatar - Main', true),
     ];
 
-    private async _avatarHandler(req: SudooExpressRequest, res: SudooExpressResponse, next: SudooExpressNextFunction): Promise<void> {
+    private async _jsonHandler(req: SudooExpressRequest, res: SudooExpressResponse, next: SudooExpressNextFunction): Promise<void> {
 
         try {
 
@@ -30,9 +30,9 @@ export class AvatarRoute extends LoggableRoute {
 
             const config: IconConfig = getIconConfigFromQuery(query);
             const base: IconStructure = generateIcon(avatar, config);
-            const icon: string = renderSvgModel(base);
+            const result: JsonStructure = renderJsonModel(base);
 
-            res.agent.raw(icon);
+            res.agent.add('avatar', result);
         } catch (err) {
             res.agent.fail(400, err);
         } finally {
