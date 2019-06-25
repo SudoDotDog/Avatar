@@ -7,7 +7,9 @@
         "connor",
         "sparidae",
         "sudoo",
-        "triforce"
+        "triforce",
+        "xlink",
+        "xmlns"
     ],
     "tslint.configFile": "typescript/tslint.json",
     "javascript.preferences.importModuleSpecifier": "auto",
