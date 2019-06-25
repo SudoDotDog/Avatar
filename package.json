@@ -1,8 +1,6 @@
 {
   "name": "@sudoo/avatar",
-  "version": "1.0.0",
   "description": ":paw_prints: Avatar management",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -18,7 +18,7 @@ export class AvatarRoute extends LoggableRoute {
     public readonly mode: ROUTE_MODE = ROUTE_MODE.GET;
 
     public readonly groups: SudooExpressHandler[] = [
-        basicHook.wrap(this._avatarHandler.bind(this), '/a/:avatar - Main', true),
+        basicHook.wrap(this._avatarHandler.bind(this), '/a/:avatar - Main'),
     ];
 
     private async _avatarHandler(req: SudooExpressRequest, res: SudooExpressResponse, next: SudooExpressNextFunction): Promise<void> {

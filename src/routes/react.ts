@@ -19,7 +19,7 @@ export class ReactRoute extends LoggableRoute {
     public readonly mode: ROUTE_MODE = ROUTE_MODE.GET;
 
     public readonly groups: SudooExpressHandler[] = [
-        basicHook.wrap(this._reactHandler.bind(this), '/r/:avatar - Main', true),
+        basicHook.wrap(this._reactHandler.bind(this), '/r/:avatar - Main'),
     ];
 
     private async _reactHandler(req: SudooExpressRequest, res: SudooExpressResponse, next: SudooExpressNextFunction): Promise<void> {

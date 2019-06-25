@@ -9,7 +9,7 @@ import { SudooLog } from '@sudoo/log';
 
 export const basicHook: SudooExpressHook<[string, boolean?]> =
     SudooExpressHook.create<[string, boolean?]>()
-        .before((req: SudooExpressRequest, res: SudooExpressResponse, content: string, isInfo: boolean = false): boolean => {
+        .before((_: SudooExpressRequest, res: SudooExpressResponse, content: string): boolean => {
 
             const log: SudooLog = SudooLog.global;
             const isFailed: boolean = res.agent.isFailed();
@@ -20,10 +20,8 @@ export const basicHook: SudooExpressHook<[string, boolean?]> =
                     : 'Entered'
                 }`;
 
-            if (isInfo) {
-                log.info(parsedContent);
-            } else {
-                log.verbose(parsedContent);
+            if (isFailed) {
+                log.warning(parsedContent);
             }
 
             return !isFailed;

@@ -18,7 +18,7 @@ export class JsonRoute extends LoggableRoute {
     public readonly mode: ROUTE_MODE = ROUTE_MODE.GET;
 
     public readonly groups: SudooExpressHandler[] = [
-        basicHook.wrap(this._jsonHandler.bind(this), '/j/:avatar - Main', true),
+        basicHook.wrap(this._jsonHandler.bind(this), '/j/:avatar - Main'),
     ];
 
     private async _jsonHandler(req: SudooExpressRequest, res: SudooExpressResponse, next: SudooExpressNextFunction): Promise<void> {
