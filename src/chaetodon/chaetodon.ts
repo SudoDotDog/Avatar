@@ -4,6 +4,8 @@
  * @description Chaetodon
  */
 
+import { _Map } from "@sudoo/bark/map";
+
 export type ColorSet = Array<string[5]>;
 
 export enum COLOR_CODE {
@@ -64,16 +66,17 @@ export const colorList: Record<COLOR_CODE, string[]> = {
 
 export const chaetodon = (code?: number): ColorSet => {
 
+    const length: number = _Map.keys(colorList).length;
     if (code && (code in COLOR_CODE)) {
 
-        return colorList[code];
+        return colorList[code as COLOR_CODE];
     } else if (code && !(code in COLOR_CODE)) {
 
-        const index: COLOR_CODE = (Math.floor(code % (Object.keys(COLOR_CODE).length / 2))) + 1;
+        const index: COLOR_CODE = code % length;
         return colorList[index];
     } else {
 
-        const ran: COLOR_CODE = (Math.floor((Math.random() * 1000)) % 15) + 1;
+        const ran: COLOR_CODE = (Math.floor((Math.random() * 1000)) % length);
         return colorList[ran];
     }
 };

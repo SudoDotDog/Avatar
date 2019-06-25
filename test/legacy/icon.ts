@@ -5,11 +5,11 @@
  */
 
 import { chaetodon } from '../../src/chaetodon/chaetodon';
-import Color from '../../src/sparidae/color';
+import { Color } from '../../src/sparidae/color';
 import { Coordinate, IconConfig } from '../../src/sparidae/declare';
-import Generator from '../../src/sparidae/generator';
-import Parser from '../../src/sparidae/parser';
-import Point from '../../src/sparidae/point';
+import { Generator } from '../../src/sparidae/generator';
+import { Parser } from '../../src/sparidae/parser';
+import { Point } from '../../src/sparidae/point';
 import Buffer from './buffer';
 
 export const Icon = (str: string, options: IconConfig = {}) => {
