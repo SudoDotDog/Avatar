@@ -24,8 +24,10 @@ export const renderSvgModel = (structure: IconStructure): string => {
             return `<polygon points="` + value.points.map((point: Coordinate) => point.x + "," + point.y).join(' ') + `" fill="${value.fill}" />`;
         } else if (value.type === 'text') {
 
-            return `<text x="${value.point.x}" y="${value.point.y}" style="font-size:${value.fontSize};font-weight:${value.bold ? "bold" : "normal"};text-anchor:${value.anchor};dominant-baseline:${value.baseline}" >${value.text}</text>`;
+            const dominant: string = value.baseline === 'none' ? '' : `;dominant-baseline:${value.baseline}`;
+            return `<text x="${value.point.x}" y="${value.point.y}" style="font-weight:${value.bold ? "bold" : "normal"};font-size:${value.fontSize};text-anchor:${value.anchor}${dominant}">${value.text}</text>`;
         }
+        return '';
     }));
 
     buffer.push('</g>');

@@ -34,7 +34,7 @@ export type SVGElement = {
     readonly fontSize: number;
     readonly bold: boolean;
     readonly anchor: "middle" | "end";
-    readonly baseline: "middle";
+    readonly baseline: "middle" | "none";
 } | {
 
     readonly type: "polygon";
