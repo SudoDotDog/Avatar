@@ -7,6 +7,8 @@
 export type ColorSet = Array<string[5]>;
 
 export enum COLOR_CODE {
+
+    FRAME = 0,
     SUN = 1,
     RAIN = 2,
     SNOW = 3,
@@ -22,12 +24,19 @@ export enum COLOR_CODE {
     NOVA = 13,
     ROSE = 14,
     CHAOS = 15,
+    SUNSET = 16,
+    SWAMP = 17,
+    MINT = 18,
+    DESIRE = 19,
+    TURQUOISE = 20,
+    FIERY = 21,
+    INSPIRATION = 22,
+    ILLUSION = 23,
 }
 
-export const colorList: {
-    [key: number]: string[];
-} = {
+export const colorList: Record<COLOR_CODE, string[]> = {
 
+    [COLOR_CODE.FRAME]: ['a3586d', '5c4a72', 'f3b05a', 'f4874b', 'f46a4e'],
     [COLOR_CODE.SUN]: ["fff353", "fec039", "fe8c43", "ed6023", "e20909"],
     [COLOR_CODE.RAIN]: ["f7f4ea", "ded9e2", "c0b9dd", "80a1d4", "75c9c8"],
     [COLOR_CODE.SNOW]: ["ced3dc", "fcf7f8", "84c4e4", "3a8ad3", "505050"],
@@ -43,6 +52,14 @@ export const colorList: {
     [COLOR_CODE.NOVA]: ["ffb997", "f67e7d", "843b62", "0b032d", "74546a"],
     [COLOR_CODE.ROSE]: ["9c89b8", "f0a6ca", "efc3e6", "f0e6ef", "b8bedd"],
     [COLOR_CODE.CHAOS]: ["f6511d", "ffb400", "00a6ed", "7fb800", "0d2c54"],
+    [COLOR_CODE.SUNSET]: ['36688d', 'f3cd05', 'f49f05', 'f12904', 'bda589'],
+    [COLOR_CODE.SWAMP]: ['6465a5', '6975a6', 'f3e96b', 'f28a30', 'f05837'],
+    [COLOR_CODE.MINT]: ['80add7', '0abda0', 'ebf2ea', 'd4dca9', 'bf9d7a'],
+    [COLOR_CODE.DESIRE]: ['27010', '720017', 'd8d583', 'd9ac2a', '763f02'],
+    [COLOR_CODE.TURQUOISE]: ['04060f', '03353e', '0294a5', 'a79c93', 'c1403d'],
+    [COLOR_CODE.FIERY]: ['594346', '212027', 'f22f08', '8d2f23', '561e18'],
+    [COLOR_CODE.INSPIRATION]: ['a3445d', '8d2d56', '0d050e', '2b193e', 'd53c3c'],
+    [COLOR_CODE.ILLUSION]: ['5aa382', '78d6ac', 'bda728', '704307', 'f7b178'],
 };
 
 export const chaetodon = (code?: number): ColorSet => {
