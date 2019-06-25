@@ -4,7 +4,7 @@
  * @description Color
  */
 
-import { ERROR_CODE, panic } from "../../util/panic";
+import { ERROR_CODE, panic } from "../util/panic";
 
 export default class Color {
     private _list: string[];

@@ -4,13 +4,13 @@
  * @description Icon
  */
 
-import { chaetodon } from './chaetodon/chaetodon';
+import { chaetodon } from '../chaetodon/chaetodon';
 import { IconConfig } from './declare';
-import Buffer from './sparidae/buffer';
-import Color from './sparidae/color';
-import Generator from './sparidae/generator';
-import Parser from './sparidae/parser';
-import Point, { IPoint } from './sparidae/point';
+import Buffer from '../sparidae/buffer';
+import Color from '../sparidae/color';
+import Generator from '../sparidae/generator';
+import Parser from '../sparidae/parser';
+import Point, { IPoint } from '../sparidae/point';
 
 export const Icon = (str: string, options: IconConfig = {}) => {
 

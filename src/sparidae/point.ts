@@ -4,7 +4,7 @@
  * @description Point
  */
 
-import { ERROR_CODE, panic } from "../../util/panic";
+import { ERROR_CODE, panic } from "../util/panic";
 
 export interface IPoint {
     x: number;
