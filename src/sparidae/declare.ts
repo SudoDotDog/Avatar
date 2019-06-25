@@ -5,6 +5,7 @@
  */
 
 export type IconConfig = {
+
     display?: string;
     center?: boolean;
     circle?: boolean;
