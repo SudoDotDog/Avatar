@@ -4,7 +4,7 @@
  * @description Svg
  */
 
-import { Coordinate, EDGE, IconStructure, SVGElement } from "../sparidae/declare";
+import { Coordinate, IconStructure, SVGElement } from "../sparidae/declare";
 
 export const renderSvgModel = (structure: IconStructure): string => {
 
