@@ -6,7 +6,7 @@
 
 import { stringToMD5 } from "../util/crypto";
 
-export default class Generator {
+export class Generator {
 
     private _medium: string;
 

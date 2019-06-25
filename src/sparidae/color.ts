@@ -6,7 +6,7 @@
 
 import { ERROR_CODE, panic } from "../util/panic";
 
-export default class Color {
+export class Color {
 
     private _list: string[];
     private _pointer: number;

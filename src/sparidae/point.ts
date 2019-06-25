@@ -7,7 +7,7 @@
 import { ERROR_CODE, panic } from "../util/panic";
 import { Coordinate, EDGE } from "./declare";
 
-export default class Point {
+export class Point {
 
     private _queue: number[];
     private _outer: Coordinate[];

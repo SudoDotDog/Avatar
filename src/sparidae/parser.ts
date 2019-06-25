@@ -4,7 +4,7 @@
  * @description Parser
  */
 
-export default class Parser {
+export class Parser {
 
     private _content: string;
 

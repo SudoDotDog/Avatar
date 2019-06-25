@@ -1,6 +1,6 @@
 /**
  * @author WMXPY
- * @namespace Go_Bartender
+ * @namespace Avatar
  * @description Index
  */
 
