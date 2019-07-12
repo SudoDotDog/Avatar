@@ -78,7 +78,7 @@ export default class Buffer {
         } else {
             buffer += "style=\"font-weight:bold;font-size:";
         }
-        buffer += fontSize + ";text-anchor:middle;dominant-baseline:middle\">";
+        buffer += fontSize + ";text-anchor:middle;dominant-baseline:central\">";
         buffer += this._text;
         buffer += "</text>";
         this._buffer.push(buffer);
