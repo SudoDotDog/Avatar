@@ -42,6 +42,7 @@ export const renderReactModel = (structure: IconStructure): ReactStructure => {
             const style: Record<string, any> = {
                 fontSize: value.fontSize,
                 textAnchor: value.anchor,
+                dominantBaseline: value.baseline,
             };
 
             return {
