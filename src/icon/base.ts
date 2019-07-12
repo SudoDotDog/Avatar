@@ -34,6 +34,7 @@ export const generateIcon = (str: string, options: IconConfig = {}): IconStructu
     const color: Color = new Color(chaetodon(generator.splice(27, 30)));
 
     const points: Coordinate[] = [
+
         point.getPoint(generator.splice(0, 6)),
         point.getPoint(generator.splice(6, 12)),
         point.getPoint(generator.splice(12, 18)),
@@ -46,6 +47,7 @@ export const generateIcon = (str: string, options: IconConfig = {}): IconStructu
     ];
 
     points.push(
+
         point.getMediumPoint(points[0], points[3], generator.splice(18, 21)),
         point.getMediumPoint(points[1], points[4], generator.splice(21, 24)),
         point.getMediumPoint(points[2], points[5], generator.splice(24, 27)),

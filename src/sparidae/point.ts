@@ -20,7 +20,9 @@ export class Point {
     }
 
     public getPoint(key: number): Coordinate {
-        if (key <= EDGE.TOTAL) {
+
+        const validationKey: number = key + EDGE.TOTAL / 2;
+        if (validationKey <= EDGE.TOTAL) {
             throw panic.code(ERROR_CODE.POINT_INTERNAL_ERROR);
         }
 
