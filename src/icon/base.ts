@@ -105,7 +105,7 @@ export const generateIcon = (str: string, options: IconConfig = {}): IconStructu
             fontSize,
             bold: !options.thin,
             anchor: 'middle',
-            baseline: 'middle',
+            baseline: 'central',
         });
     } else {
         elements.push({
