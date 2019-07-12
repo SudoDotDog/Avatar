@@ -18,7 +18,7 @@ export enum ERROR_CODE {
 
 export const ERROR_LIST: Record<ERROR_CODE, string> = {
 
-    [ERROR_CODE.INTERNAL_ERROR]: 'Internal error',
+    [ERROR_CODE.INTERNAL_ERROR]: 'Internal error, reason: "{}"',
     [ERROR_CODE.POINT_INTERNAL_ERROR]: 'Point internal error',
 
     [ERROR_CODE.EDGE_OUT_OF_BOUND]: 'Edge out of bound',

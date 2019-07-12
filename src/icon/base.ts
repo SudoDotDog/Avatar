@@ -30,7 +30,6 @@ export const generateIcon = (str: string, options: IconConfig = {}): IconStructu
     const generator: Generator = new Generator(str);
     const point: Point = new Point();
 
-
     const color: Color = new Color(chaetodon(generator.splice(27, 30)));
 
     const points: Coordinate[] = [

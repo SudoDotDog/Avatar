@@ -29,7 +29,7 @@ export const renderSvgModel = (structure: IconStructure): string => {
             const dominant: string = value.baseline === 'none' ? '' : `;dominant-baseline:${value.baseline}`;
             return `<text x="${value.point.x}" y="${value.point.y}" style="${fontWeight}font-size:${value.fontSize};text-anchor:${value.anchor}${dominant}">${value.text}</text>`;
         }
-        throw panic.code(ERROR_CODE.INTERNAL_ERROR);
+        throw panic.code(ERROR_CODE.INTERNAL_ERROR, 'Undefined Tag');
     }));
 
     buffer.push('</g>');

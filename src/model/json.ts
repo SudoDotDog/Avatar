@@ -55,7 +55,7 @@ export const renderJsonModel = (structure: IconStructure): JsonStructure => {
                 children: [value.text],
             };
         }
-        throw panic.code(ERROR_CODE.INTERNAL_ERROR);
+        throw panic.code(ERROR_CODE.INTERNAL_ERROR, 'Undefined Tag');
     });
 
     if (structure.circle) {

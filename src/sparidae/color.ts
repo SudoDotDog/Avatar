@@ -31,7 +31,8 @@ export class Color {
             color = color.substring(1, color.length);
         }
         if (color.length !== 6) {
-            throw panic.code(ERROR_CODE.INTERNAL_ERROR);
+            console.log(location);
+            throw panic.code(ERROR_CODE.INTERNAL_ERROR, 'Bad Color Set');
         }
 
         let result: string = "rgba(";

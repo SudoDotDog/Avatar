@@ -54,7 +54,7 @@ export const renderReactModel = (structure: IconStructure): ReactStructure => {
                 children: [value.text],
             };
         }
-        throw panic.code(ERROR_CODE.INTERNAL_ERROR);
+        throw panic.code(ERROR_CODE.INTERNAL_ERROR, "Undefined Tag");
     });
 
     if (structure.circle) {
