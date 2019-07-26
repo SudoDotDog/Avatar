@@ -19,10 +19,10 @@
   "homepage": "https://github.com/SudoDotDog/Avatar#readme",
   "dependencies": {
     "@sudoo/bark": "^2.7.1",
-    "@sudoo/express": "^1.11.0",
-    "@sudoo/io": "^1.6.0",
+    "@sudoo/express": "^1.14.3",
+    "@sudoo/io": "^1.6.1",
     "@sudoo/log": "^1.2.2",
-    "connor": "^2.5.1"
+    "connor": "^2.6.0"
   },
   "devDependencies": {
     "@sudoo/triforce": "^1.6.0",
