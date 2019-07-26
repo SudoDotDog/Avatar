@@ -38,19 +38,14 @@ export const renderReactModel = (structure: IconStructure): ReactStructure => {
                 children: [],
             };
         } else if (value.type === 'text') {
-
-            const style: Record<string, any> = {
-                fontSize: value.fontSize,
-                textAnchor: value.anchor,
-                dominantBaseline: value.baseline,
-            };
-
             return {
                 tag: 'text',
                 attributes: {
-                    style,
                     x: value.point.x.toString(),
                     y: value.point.y.toString(),
+                    fontSize: value.fontSize,
+                    textAnchor: value.anchor,
+                    alignmentBaseline: value.baseline,
                 },
                 children: [value.text],
             };
