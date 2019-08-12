@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/SudoDotDog/Avatar#readme",
   "dependencies": {
+    "@bwnl/color": "^1.0.1",
     "@sudoo/bark": "^2.7.1",
     "@sudoo/express": "^1.14.3",
     "@sudoo/io": "^1.6.1",

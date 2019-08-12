@@ -4,8 +4,7 @@
  * @description Base
  */
 
-import { chaetodon } from '../chaetodon/chaetodon';
-import { Color } from '../sparidae/color';
+import { Color, getColor } from "@bwnl/color";
 import { Coordinate, EDGE, IconConfig, IconStructure, SVGElement } from '../sparidae/declare';
 import { Generator } from '../sparidae/generator';
 import { Parser } from '../sparidae/parser';
@@ -30,7 +29,7 @@ export const generateIcon = (str: string, options: IconConfig = {}): IconStructu
     const generator: Generator = new Generator(str);
     const point: Point = new Point();
 
-    const color: Color = new Color(chaetodon(generator.splice(27, 30)));
+    const color: Color = Color.fromList(getColor(generator.splice(27, 30)));
 
     const points: Coordinate[] = [
 
