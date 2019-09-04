@@ -113,7 +113,7 @@ export const generateIcon = (str: string, options: IconConfig = {}): IconStructu
             fontSize,
             bold: !options.thin,
             anchor: 'end',
-            baseline: 'none',
+            baseline: 'auto',
         });
     }
 

@@ -42,7 +42,7 @@ export const renderJsonModel = (structure: IconStructure): JsonStructure => {
         } else if (value.type === 'text') {
 
             const fontWeight: string = value.bold ? 'font-weight:bold;' : '';
-            const dominant: string = value.baseline === 'none' ? '' : `;dominant-baseline:${value.baseline}`;
+            const dominant: string = value.baseline === 'auto' ? '' : `;dominant-baseline:${value.baseline}`;
             const style: string = `${fontWeight}font-size:${value.fontSize};text-anchor:${value.anchor}${dominant}`;
 
             return {

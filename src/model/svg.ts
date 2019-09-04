@@ -26,7 +26,7 @@ export const renderSvgModel = (structure: IconStructure): string => {
         } else if (value.type === 'text') {
 
             const fontWeight: string = value.bold ? 'font-weight:bold;' : '';
-            const dominant: string = value.baseline === 'none' ? '' : `;dominant-baseline:${value.baseline}`;
+            const dominant: string = value.baseline === 'auto' ? '' : `;dominant-baseline:${value.baseline}`;
             return `<text x="${value.point.x}" y="${value.point.y}" style="${fontWeight}font-size:${value.fontSize};text-anchor:${value.anchor}${dominant}">${value.text}</text>`;
         }
         throw panic.code(ERROR_CODE.INTERNAL_ERROR, 'Undefined Tag');
