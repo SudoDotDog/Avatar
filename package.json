@@ -18,16 +18,16 @@
   },
   "homepage": "https://github.com/SudoDotDog/Avatar#readme",
   "dependencies": {
-    "@bwnl/color": "^1.0.1",
+    "@bwnl/color": "^1.0.2",
     "@sudoo/bark": "^2.7.1",
-    "@sudoo/express": "^1.14.3",
+    "@sudoo/express": "^2.0.2",
     "@sudoo/io": "^1.6.1",
     "@sudoo/log": "^1.2.2",
     "connor": "^2.6.0"
   },
   "devDependencies": {
-    "@sudoo/triforce": "^1.6.0",
-    "@types/express": "^4.17.0"
+    "@sudoo/triforce": "^1.10.0",
+    "@types/express": "^4.17.2"
   },
   "nyc": {
     "extension": [
