@@ -7,7 +7,9 @@
 export enum EDGE {
 
     LENGTH = 480,
+    // tslint:disable-next-line: no-magic-numbers
     TOTAL = LENGTH * 4,
+    // tslint:disable-next-line: no-magic-numbers
     AVAILABLE_SHIFT = Math.floor(LENGTH * 0.3),
 }
 

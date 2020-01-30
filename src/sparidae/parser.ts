@@ -59,7 +59,7 @@ export class Parser {
                     if (splited[1].length < 1) {
                         return (splited[0].length === 1 ? (splited[0].toUpperCase() + "*") : "**") + " *";
                     } else if (splited[1].length < 2) {
-                        return (splited[0].length === 1 ? (splited[0].toUpperCase() + "*") : splited[1].toUpperCase) + " *";
+                        return `${splited[0].length === 1 ? (splited[0].toUpperCase() + "*") : splited[1].toUpperCase} *`;
                     }
                     return splited[0].substring(0, 1).toUpperCase() +
                         splited[1].substring(0, 1).toUpperCase() + " " +

@@ -32,7 +32,7 @@ export const renderReactModel = (structure: IconStructure): ReactStructure => {
             return {
                 tag: 'polygon',
                 attributes: {
-                    points: value.points.map((point: Coordinate) => point.x + "," + point.y).join(' '),
+                    points: value.points.map((point: Coordinate) => `${point.x},${point.y}`).join(' '),
                     fill: value.fill,
                 },
                 children: [],

@@ -22,7 +22,7 @@ export const renderSvgModel = (structure: IconStructure): string => {
     buffer.push(...structure.elements.map((value: SVGElement) => {
 
         if (value.type === 'polygon') {
-            return `<polygon points="` + value.points.map((point: Coordinate) => point.x + "," + point.y).join(' ') + `" fill="${value.fill}" />`;
+            return `<polygon points="` + value.points.map((point: Coordinate) => `${point.x},${point.y}`).join(' ') + `" fill="${value.fill}" />`;
         } else if (value.type === 'text') {
 
             const fontWeight: string = value.bold ? 'font-weight:bold;' : '';

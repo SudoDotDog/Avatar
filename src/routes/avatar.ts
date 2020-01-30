@@ -5,6 +5,7 @@
  */
 
 import { ROUTE_MODE, SudooExpressHandler, SudooExpressNextFunction, SudooExpressRequest, SudooExpressResponse } from "@sudoo/express";
+import { HTTP_RESPONSE_CODE } from "@sudoo/magic";
 import { generateIcon } from "../icon/base";
 import { getIconConfigFromQuery } from "../icon/parse";
 import { renderSvgModel } from "../model/svg";
@@ -34,8 +35,10 @@ export class AvatarRoute extends LoggableRoute {
 
             res.agent.raw(icon);
         } catch (err) {
-            res.agent.fail(400, err);
+
+            res.agent.fail(HTTP_RESPONSE_CODE.BAD_REQUEST, err);
         } finally {
+
             next();
         }
     }

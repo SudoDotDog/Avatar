@@ -7,6 +7,7 @@
 import { ERROR_CODE, panic } from "../util/panic";
 import { Coordinate, EDGE } from "./declare";
 
+// tslint:disable: no-magic-numbers
 export class Point {
 
     private _queue: number[];
@@ -133,3 +134,4 @@ export class Point {
         return this;
     }
 }
+// tslint:enable: no-magic-numbers

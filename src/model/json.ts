@@ -34,7 +34,7 @@ export const renderJsonModel = (structure: IconStructure): JsonStructure => {
             return {
                 tag: 'polygon',
                 attributes: {
-                    points: value.points.map((point: Coordinate) => point.x + "," + point.y).join(' '),
+                    points: value.points.map((point: Coordinate) => `${point.x},${point.y}`).join(' '),
                     fill: value.fill,
                 },
                 children: [],
