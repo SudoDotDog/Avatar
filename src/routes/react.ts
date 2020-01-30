@@ -5,6 +5,7 @@
  */
 
 import { ROUTE_MODE, SudooExpressHandler, SudooExpressNextFunction, SudooExpressRequest, SudooExpressResponse } from "@sudoo/express";
+import { HTTP_RESPONSE_CODE } from "@sudoo/magic";
 import { generateIcon } from "../icon/base";
 import { getIconConfigFromQuery } from "../icon/parse";
 import { JsonStructure } from "../model/json";
@@ -35,7 +36,8 @@ export class ReactRoute extends LoggableRoute {
 
             res.agent.add('avatar', result);
         } catch (err) {
-            res.agent.fail(400, err);
+
+            res.agent.fail(HTTP_RESPONSE_CODE.BAD_REQUEST, err);
         } finally {
             next();
         }

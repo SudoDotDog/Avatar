@@ -1,9 +1,6 @@
 {
   "name": "@sudoo/avatar",
   "description": ":paw_prints: Avatar management",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SudoDotDog/Avatar.git"
@@ -23,6 +20,7 @@
     "@sudoo/express": "^2.0.2",
     "@sudoo/io": "^1.6.2",
     "@sudoo/log": "^1.3.0",
+    "@sudoo/magic": "^1.4.1",
     "connor": "^2.6.1"
   },
   "devDependencies": {

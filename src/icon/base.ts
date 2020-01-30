@@ -24,6 +24,7 @@ export const getDisplay = (content: string, display?: string): string => {
     return parser.getTwoDigitResult();
 };
 
+// tslint:disable: no-magic-numbers
 export const generateIcon = (str: string, options: IconConfig = {}): IconStructure => {
 
     const generator: Generator = new Generator(str);
@@ -124,3 +125,4 @@ export const generateIcon = (str: string, options: IconConfig = {}): IconStructu
         elements,
     };
 };
+// tslint:enable: no-magic-numbers
